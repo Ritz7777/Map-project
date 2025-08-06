@@ -8,7 +8,7 @@ export const PolygonDrawer: React.FC = () => {
   const [currentPoints, setCurrentPoints] = useState<LatLng[]>([]);
   const { onPolygonCreate, setIsDrawingMode } = useDataContext();
 
-  const map = useMapEvents({
+   useMapEvents({
     click: useCallback((e: any) => {
       const newPoint = e.latlng;
       setCurrentPoints(prev => [...prev, newPoint]);

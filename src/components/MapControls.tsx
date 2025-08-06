@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Square, Trash2, ZoomIn, ZoomOut } from 'lucide-react';
+import { Layers, Square, Trash2 } from 'lucide-react';
 import { useDataContext } from '../context/DataContext';
 
 export const MapControls: React.FC = () => {

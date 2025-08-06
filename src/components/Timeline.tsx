@@ -98,7 +98,7 @@ export const Timeline: React.FC = () => {
                 borderRadius: '8px',
                 color: '#e2e8f0',
               }}
-              formatter={(value: any, name: string) => [
+              formatter={(value: any, ) => [
                 `${value.toFixed(2)} ${currentDataset.unit}`,
                 currentDataset.name
               ]}

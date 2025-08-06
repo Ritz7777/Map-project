@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { MapContainer as LeafletMapContainer, TileLayer, CircleMarker, Polygon, Popup } from 'react-leaflet';
 import { Map as LeafletMap, LatLngExpression } from 'leaflet';
 import { useDataContext } from '../context/DataContext';
@@ -18,18 +18,6 @@ export const MapContainer: React.FC = () => {
   const currentDataset = datasets.find(d => d.id === selectedDataset);
 
   // Calculate color based on data value
-  const getPointColor = useCallback((value: number, dataset: typeof currentDataset) => {
-    if (!dataset) return '#94a3b8';
-    
-    const normalized = (value - dataset.min) / (dataset.max - dataset.min);
-    const intensity = Math.max(0, Math.min(1, normalized));
-    
-    // Create color gradient from light to intense based on dataset color
-    const baseColor = dataset.color;
-    const opacity = 0.3 + (intensity * 0.7);
-    
-    return `${baseColor}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
-  }, []);
 
   const getPointRadius = useCallback((value: number, dataset: typeof currentDataset) => {
     if (!dataset) return 5;

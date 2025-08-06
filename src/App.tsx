@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import  { useState, useCallback, useEffect } from 'react';
 import { MapContainer } from './components/MapContainer';
 import { Timeline } from './components/Timeline';
 import { Sidebar } from './components/Sidebar';
